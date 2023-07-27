@@ -1,0 +1,25 @@
+@email = b
+@port = 3000
+GET http://localhost:{{port}}/users
+###
+GET http://localhost:{{port}}/users/{{email}}
+###
+POST http://localhost:{{port}}/users
+Content-Type: application/json
+
+{
+    "name": "a",
+    "password": "a",
+    "email": "ab"
+}
+###
+PATCH http://localhost:{{port}}/users/{{email}}
+Content-Type: application/json
+
+{
+    "name": "c",
+    "password": "b",
+    "email": "new"
+}
+###
+DELETE http://localhost:{{port}}/users/{{email}}
